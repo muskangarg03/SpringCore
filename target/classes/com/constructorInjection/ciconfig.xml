@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    https://www.springframework.org/schema/context
+    https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<bean class="com.constructorInjection.Certificate" name="cert" c:cname="Java" />
+<!-- 
+<bean class="com.constructorInjection.Certificate" name="cert"> 
+	<constructor-arg value="SpringCore" />
+</bean> 
+-->
+
+
+<bean class="com.constructorInjection.Person" name="person">
+<!-- 
+	<constructor-arg>
+		<value> Muskan </value>
+	</constructor-arg>
+-->
+	<constructor-arg value="Muskan"/> 
+	<constructor-arg value="12" type="int"/>  <!-- type can also be specified, if there are more than one constructors
+	//It will take that constructor, whose first parameter is of String type and second of integer type. -->
+	
+	<constructor-arg ref="cert" />
+	
+	<constructor-arg>
+		<list>
+			<value>12</value>
+			<value>22</value>
+			<null/>
+		</list>
+	</constructor-arg>
+</bean>
+
+
+
+<bean class="com.constructorInjection.Addition" name="add" >
+<!--  By default, it is search for String. If String is not found than it will call constructors order-wise. -->
+	<constructor-arg value="12" type="int" index="1"/>   <!-- using type="" attribute, we can define the type of parameter, and index="" is used to define the position of the attribute    -->
+	<constructor-arg value="34" type="int" index="0"/>
+</bean>
+
+
+
+
+</beans>

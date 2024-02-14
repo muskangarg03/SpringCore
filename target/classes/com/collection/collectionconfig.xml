@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    https://www.springframework.org/schema/context
+    https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--  
+	//Collection Types
+	//List , duplicates are allowed, order will be maintained
+	<bean>
+		<property name="">
+		<list>
+			<value>10</value>
+			<value>102</value>
+			<value>123</value>
+			<null/>
+		</list>	
+		</property>
+	</bean>
+	
+	//Set , duplicates are not allowed, order will not maintain
+	<bean>
+		<property name="">
+		<set>
+			<value>10</value>
+			<value>102</value>
+			<value>123</value>
+		</set>	
+		</property>
+	</bean>
+	
+	//Map
+	<bean>
+		<property name="">
+		<map>
+			<entry key="java" value="2month"/>
+			<entry key="python" value="1month"/>
+		</map>	
+		</property>
+	</bean>
+	
+	//Properties
+	<bean>
+		<property name="">
+		<props>
+			<prop key="name">Muskan</prop> 
+			<prop key="cName">Java</prop> 
+		</props>	
+		</property>
+	</bean>
+-->
+
+
+<bean class="com.collection.Employee" name="emp1">
+	<property name="name" value="Radhe"/>
+	
+<!-- 	<property name="phones" value="000999888"/>   //If there are only one value then you can skip the <list> tag, it will automatically create a list. -->
+<!--    // empty list can also be created, if you do not specify the value -->
+<!--    // Same thing can also be done with set -->
+	
+	<property name="phones">
+		<list>
+			<value>123456</value>
+			<value>987654</value>
+			<value>234567</value>
+			<null/>
+		</list>
+	</property>
+	
+	<property name="address">
+		<set>
+			<value>Delhi</value>
+			<value>Lucknow</value>
+			<value>Kanpur</value>
+		</set>
+	</property>
+	
+	<property name="courses">
+		<map>
+			<entry key="java" value="2months"/>
+			<entry key="python" value="1.5months"/>
+			<entry key="C" value="1month"/>
+		</map>
+	</property>
+	
+	<property name="props">
+		<props>
+			<prop key="uname">Muskan</prop> 
+			<prop key="sname">Garg</prop> 
+		</props>	
+	</property>
+
+
+</bean>
+
+</beans>

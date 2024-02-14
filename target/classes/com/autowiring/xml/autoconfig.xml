@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd
+    https://www.springframework.org/schema/context
+    https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!-- //byName method  
+	<bean class="com.autowiring.xml.Address" name="address" >  //bean name and the reference of this, in the other bean should be same
+		<property name="street" value="Temp Street" />
+		<property name="city" value="Agra" />
+	</bean> 
+
+ 	<bean class="com.autowiring.xml.Address" name="address1" > //this bean will not be referenced due to the different name
+		<property name="street" value="Second Street" />
+		<property name="city" value="UP" />
+	</bean> 
+
+
+	<bean class="com.autowiring.xml.Employee" name="emp1" autowire="byName" />
+-->	
+
+
+
+
+<!-- //byType method 
+
+	<bean class="com.autowiring.xml.Address" name="address1" >  //no requirement of same name
+		<property name="street" value="Temp Street" />
+		<property name="city" value="Agra" />
+	</bean> 
+	
+	<bean class="com.autowiring.xml.Address" name="address2" >  //if there will be more than one bean of same type, then it will generate error
+		<property name="street" value="Second Street" />
+		<property name="city" value="UP" />
+	</bean> 
+
+
+	<bean class="com.autowiring.xml.Employee" name="emp1" autowire="byType" />
+-->
+
+
+
+<!-- //contructor method 
+	<bean class="com.autowiring.xml.Address" name="address" >  
+		<property name="street" value="Temp Street" />
+		<property name="city" value="Agra" />
+	</bean> 	
+	
+	<bean class="com.autowiring.xml.Address" name="address" >  //if we create this, then null be given
+		<property name="street" value="Temp Street" />
+		<property name="city" value="Agra" />
+	</bean> 
+	
+	
+	<bean class="com.autowiring.xml.Employee" name="emp1" autowire="constructor" />
+
+-->
+
+
+</beans>
